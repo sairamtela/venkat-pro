@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR to Salesforce</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+        .container {
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            max-width: 600px;
+        }
+        video, canvas {
+            width: 100%;
+            max-width: 500px;
+            margin-bottom: 10px;
+            border: 2px solid #00796b;
+            border-radius: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            background-color: #00796b;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #004d40;
+        }
+        #outputAttributes {
+            text-align: left;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>OCR to Salesforce</h1>
+        <video id="camera" autoplay playsinline></video>
+        <canvas id="canvas" style="display:none;"></canvas>
+        <div>
+            <button id="captureButton">Capture Image</button>
+            <button id="flipButton">Flip Camera</button>
+            <button id="sendToSalesforce">Send to Salesforce</button>
+        </div>
+        <div class="output">
+            <h3>Extracted Data</h3>
+            <div id="outputAttributes">No data yet...</div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js"></script>
+    <script src="script.js" defer></script>
+</body>
+</html>
